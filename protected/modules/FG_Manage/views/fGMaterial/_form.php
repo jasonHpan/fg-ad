@@ -16,7 +16,7 @@
 	'htmlOptions' => array('enctype' => 'multipart/form-data'),
 )); ?>
 
-    <p class="help-block">Fields with <span class="required">*</span> are required.</p>
+    <p class="note"><br>欄位有<span class="required">*</span>為必填欄位<br></p>
 
     <?php echo $form->errorSummary($model); ?>
 
@@ -34,7 +34,7 @@
     <?php echo $form->textFieldControlGroup($model,'url',array('span'=>5)); ?>
 
         <div class="form-actions">
-        <?php echo TbHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array(
+        <?php echo TbHtml::submitButton($model->isNewRecord ? '新增' : '更新',array(
 		    'color'=>TbHtml::BUTTON_COLOR_PRIMARY,
 		    'size'=>TbHtml::BUTTON_SIZE_LARGE,
 		)); ?>

@@ -1,5 +1,5 @@
 <?php echo TbHtml::breadcrumbs(array(
-    '操作管理'=>'#',
+    '縣市設定'=>'#',
     '列表'
 )); ?>
 
@@ -17,7 +17,7 @@
                         'url'=>Yii::app()->createUrl('/FG_Manage/FgCity/admin')
                    )); ?>
 
-<h1>縣市設定</h1>
+
 <?php
 $this->widget('zii.widgets.grid.CGridView',array(
 	'dataProvider' => $dataProvider,

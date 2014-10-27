@@ -55,7 +55,7 @@ class FgPlace extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id', 'required'),
+			// array('id', 'required'),
 			array('id, place_type_id', 'numerical', 'integerOnly'=>true),
 			array('name', 'length', 'max'=>45),
 			// The following rule is used by search().
@@ -83,9 +83,9 @@ class FgPlace extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
-			'name' => 'Name',
-			'place_type_id' => 'Place Type',
+			'id' => '流水號',
+			'name' => '通路名稱',
+			'place_type_id' => '通路類型名稱',
 		);
 	}
 

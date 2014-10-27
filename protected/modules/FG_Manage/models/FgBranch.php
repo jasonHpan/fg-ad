@@ -58,7 +58,7 @@ class FgBranch extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id', 'required'),
+			// array('id', 'required'),
 			array('id, place_id, city_id, area_id', 'numerical', 'integerOnly'=>true),
 			array('name', 'length', 'max'=>45),
 			// The following rule is used by search().
@@ -87,11 +87,11 @@ class FgBranch extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
-			'name' => 'Name',
-			'place_id' => 'Place',
-			'city_id' => 'City',
-			'area_id' => 'Area',
+			'id' => '流水號',
+			'name' => '分店名稱',
+			'place_id' => '通路名稱',
+			'city_id' => '縣市名稱',
+			'area_id' => '分店位置',
 		);
 	}
 

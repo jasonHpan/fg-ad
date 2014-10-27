@@ -7,7 +7,7 @@ class FgAreaController extends Controller
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
 	// public $layout='//layouts/column2';
-	public $main_menu = '地區設定';
+	public $main_menu = 'fgarea';
 
 	/**
 	 * @return array action filters

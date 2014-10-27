@@ -7,7 +7,7 @@ class FgCityController extends Controller
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
 	// public $layout='//layouts/column2';
-	public $main_menu = '城市設定';
+	public $main_menu = 'fgcity';
 
 	/**
 	 * @return array action filters

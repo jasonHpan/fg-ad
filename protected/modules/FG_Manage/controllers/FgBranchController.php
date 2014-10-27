@@ -7,7 +7,7 @@ class FgBranchController extends Controller
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
 	// public $layout='//layouts/column2';
-	public $main_menu = '店家設定';
+	public $main_menu = 'fgbranch';
 
 	/**
 	 * @return array action filters
@@ -103,7 +103,14 @@ class FgBranchController extends Controller
 			'model'=>$model,
 		));
 	}
-
+	public function actionDropDownListChange($city_id){
+		$returnStr = "";
+		$withArr = FgArea::model()->with('city')->findAll('city_id=:city_id',array(":city_id"=>$city_id));
+        foreach($withArr as $key=>$value){
+        	$returnStr = $returnStr."<option value='".$value->id."'>".$value->name."</option>";
+        }
+        echo $returnStr;
+	}
 	/**
 	 * Deletes a particular model.
 	 * If deletion is successful, the browser will be redirected to the 'admin' page.

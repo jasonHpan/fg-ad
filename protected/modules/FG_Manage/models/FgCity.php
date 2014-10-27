@@ -13,28 +13,14 @@
  * @property FgArea[] $fgAreas
  * @property FgDirection $direction
  */
-class FgCity extends CActiveRecord
+class FgCity extends RewriteAR
 {
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
 	 * @return FgCity the static model class
 	 */
-	//改寫父類別連線方式
-	function __construct($scenario='insert')
-    {
-    	// 修改連線資訊
-        $dbname = Yii::app()->dbfgmanage->connectionString;
-        Yii::app()->db->setActive(false);
-        Yii::app()->db->connectionString = trim($dbname);
-        Yii::app()->db->setActive(true);
-        // 新增及修改
-        if($scenario===null) // internally used by populateRecord() and model()
-			return;
-        $this->setScenario($scenario);
-		$this->setIsNewRecord(true);
-		
-    }   
+	
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
@@ -56,7 +42,7 @@ class FgCity extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id', 'required'),
+			// array('id', 'required'),
 			array('id, direction_id, seq', 'numerical', 'integerOnly'=>true),
 			array('name', 'length', 'max'=>45),
 			// The following rule is used by search().
@@ -84,10 +70,10 @@ class FgCity extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
-			'name' => 'Name',
-			'direction_id' => 'Direction',
-			'seq' => 'Seq',
+			'id' => '流水號',
+			'name' => '縣市名稱',
+			'direction_id' => '方位名稱',
+			'seq' => '排序',
 		);
 	}
 	public function getAreaName(){

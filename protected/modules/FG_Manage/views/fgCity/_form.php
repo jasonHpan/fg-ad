@@ -22,17 +22,16 @@ foreach ($FgDirectionModel as $key => $value) {
 	'enableAjaxValidation'=>false,
 )); ?>
 
-    <p class="help-block">Fields with <span class="required">*</span> are required.</p>
+    <p class="note"><br>欄位有<span class="required">*</span>為必填欄位<br></p>
     
     <?php echo $form->errorSummary($model); ?>
 
-    <?php echo $form->textFieldControlGroup($model,'id',array('span'=>5,"disalbed"=>"disalbed")); ?>
     <?php echo (!$model->isNewRecord)?( $form->dropDownListControlGroup($model,'name',$cityArr,array('empty'=>"請選擇縣市","disabled"=>"disalbed"))):( $form->textFieldControlGroup($model,'name',array('span'=>5))); ?>
     <?php echo $form->dropDownListControlGroup($model,'direction_id',$directionArr,array('empty'=>"請選擇區域")); ?>
     <?php echo $form->textFieldControlGroup($model,'seq',array('span'=>5)); ?>
 
         <div class="form-actions">
-        <?php echo TbHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array(
+        <?php echo TbHtml::submitButton($model->isNewRecord ? '新增' : '更新',array(
 		    'color'=>TbHtml::BUTTON_COLOR_PRIMARY,
 		    'size'=>TbHtml::BUTTON_SIZE_LARGE,
 		)); ?>

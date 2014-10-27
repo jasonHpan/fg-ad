@@ -1,24 +1,9 @@
-<?php
-/* @var $this FgDeviceTypeController */
-/* @var $model FgDeviceType */
-?>
+<?php echo TbHtml::breadcrumbs(array(
+    '裝置類型設定'=>array('index'),
+    '修改('.$model->id.')'=>array('update','id'=>$model->id),
+    '檢視'
+)); ?>
 
-<?php
-$this->breadcrumbs=array(
-	'Fg Device Types'=>array('index'),
-	$model->name,
-);
-
-$this->menu=array(
-	array('label'=>'List FgDeviceType', 'url'=>array('index')),
-	array('label'=>'Create FgDeviceType', 'url'=>array('create')),
-	array('label'=>'Update FgDeviceType', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete FgDeviceType', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage FgDeviceType', 'url'=>array('admin')),
-);
-?>
-
-<h1>View FgDeviceType #<?php echo $model->id; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView',array(
     'htmlOptions' => array(

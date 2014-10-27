@@ -79,9 +79,9 @@ class FGMaterial extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
-			'name' => 'Name',
-			'type' => 'Type',
+			'id' => '流水號',
+			'name' => '素材名稱',
+			'type' => '素材類型',
 		);
 	}
 	public function getImage(){

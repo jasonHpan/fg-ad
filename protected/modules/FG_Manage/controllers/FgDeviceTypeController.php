@@ -7,7 +7,7 @@ class FgDeviceTypeController extends Controller
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
 	// public $layout='//layouts/column2';
-	public $main_menu = '裝置類型設定';
+	public $main_menu = 'fgdevicetype';
 
 	/**
 	 * @return array action filters

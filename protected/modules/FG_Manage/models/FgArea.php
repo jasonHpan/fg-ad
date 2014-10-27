@@ -13,26 +13,9 @@
  * @property FgCity $city
  * @property FgBranch[] $fgBranches
  */
-class FgArea extends CActiveRecord
+class FgArea extends RewriteAR
 {
-	//改寫父類別連線方式
-	function __construct($scenario='insert')
-    {
-    	// $this->_model=$model;
-    	// var_dump($model);
-    	// exit;
-    	// 修改連線資訊
-        $dbname = Yii::app()->dbfgmanage->connectionString;
-        Yii::app()->db->setActive(false);
-        Yii::app()->db->connectionString = trim($dbname);
-        Yii::app()->db->setActive(true);
-        // 新增及修改
-        if($scenario===null) // internally used by populateRecord() and model()
-			return;
-        $this->setScenario($scenario);
-		$this->setIsNewRecord(true);
-		
-    }   
+	  
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -59,7 +42,7 @@ class FgArea extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id', 'required'),
+			// array('id', 'required'),
 			array('id, seq, city_id', 'numerical', 'integerOnly'=>true),
 			array('name', 'length', 'max'=>45),
 			// The following rule is used by search().
@@ -87,10 +70,10 @@ class FgArea extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
-			'name' => 'Name',
-			'seq' => 'Seq',
-			'city_id' => 'City',
+			'id' => '流水號',
+			'name' => '地區名稱',
+			'seq' => '排序',
+			'city_id' => '縣市',
 		);
 	}
 

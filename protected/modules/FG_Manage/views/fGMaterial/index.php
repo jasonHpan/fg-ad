@@ -18,7 +18,7 @@
                                                        )); ?>
 
 
-<h1>素材設定</h1>
+
 
 <?php $this->widget('zii.widgets.grid.CGridView',array(
     'dataProvider'=>$dataProvider,

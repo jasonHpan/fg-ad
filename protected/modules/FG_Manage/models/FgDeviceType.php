@@ -55,7 +55,7 @@ class FgDeviceType extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id', 'required'),
+			// array('id', 'required'),
 			array('id', 'numerical', 'integerOnly'=>true),
 			array('name', 'length', 'max'=>45),
 			array('remark', 'safe'),
@@ -84,9 +84,9 @@ class FgDeviceType extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
-			'name' => 'Name',
-			'remark' => 'Remark',
+			'id' => '流水號',
+			'name' => '裝置類型',
+			'remark' => '裝置說明',
 		);
 	}
 

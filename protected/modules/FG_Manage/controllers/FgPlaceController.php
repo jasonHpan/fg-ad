@@ -7,7 +7,7 @@ class FgPlaceController extends Controller
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
 	// public $layout='//layouts/column2';
-	public $main_menu = '通路設定';
+	public $main_menu = 'fgplace';
 
 	/**
 	 * @return array action filters
@@ -71,7 +71,7 @@ class FgPlaceController extends Controller
 		if (isset($_POST['FgPlace'])) {
 			$model->attributes=$_POST['FgPlace'];
 			if ($model->save()) {
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('FgPlace/view','id'=>$model->id));
 			}
 		}
 
@@ -95,7 +95,7 @@ class FgPlaceController extends Controller
 		if (isset($_POST['FgPlace'])) {
 			$model->attributes=$_POST['FgPlace'];
 			if ($model->save()) {
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('FgPlace/view','id'=>$model->id));
 			}
 		}
 

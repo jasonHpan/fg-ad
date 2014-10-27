@@ -1,43 +1,13 @@
-<?php
-$this->breadcrumbs=array(
-	'Fg Cities'=>array('index'),
-	'Manage',
-);
-
-$this->menu=array(
-	array('label'=>'List FgCity', 'url'=>array('index')),
-	array('label'=>'Create FgCity', 'url'=>array('create')),
-);
-
-Yii::app()->clientScript->registerScript('search', "
-$('.search-button').click(function(){
-	$('.search-form').toggle();
-	return false;
-});
-$('.search-form form').submit(function(){
-	$('#fg-city-grid').yiiGridView('update', {
-		data: $(this).serialize()
-	});
-	return false;
-});
-");
-
-?>
-
-<h1>Manage Fg Cities</h1>
+<?php echo TbHtml::breadcrumbs(array(
+	"縣市設定"=>array('index'),
+	"搜尋"
+));?>
 
 
-
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button btn')); ?>
-<div class="search-form" style="display:none">
-<?php $this->renderPartial('_search',array(
-	'model'=>$model,
-)); ?>
-</div><!-- search-form -->
 <?php
 
 $gridColumns = array(
-	array('name'=>'id', 'header'=>'#', 'htmlOptions'=>array('style'=>'width: 60px')),
+	array('name'=>'id', 'header'=>'流水號', 'htmlOptions'=>array('style'=>'width: 60px')),
 	array('name'=>'name', 'header'=>'縣市'),
 	array('name'=>'direction.name', 'header'=>'區域','filter'=>CHtml::activeTextField($model,'direction')),
 	array('name'=>'seq', 'header'=>'排序'),

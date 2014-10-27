@@ -7,7 +7,7 @@ class FgDirectionController extends Controller
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
 	// public $layout='//layouts/column2';
-	public $main_menu = '位置設定';
+	public $main_menu = 'fgdirection';
 
 	/**
 	 * @return array action filters

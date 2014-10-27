@@ -1,44 +1,38 @@
+<?php echo TbHtml::breadcrumbs(array(
+	"素材設定"=>array('index'),
+	"搜尋"
+));?>
+
 <?php
-/* @var $this FGMaterialController */
-/* @var $model FGMaterial */
 
-
-$this->breadcrumbs=array(
-	'Fgmaterials'=>array('index'),
-	'Manage',
+$gridColumns = array(
+	array('name'=>'id', 'header'=>'流水號', 'htmlOptions'=>array('style'=>'width: 60px')),
+	array('name'=>'name', 'header'=>'素材名稱'),
+	array('name'=>'type', 'header'=>'素材類型'),
+	array('name'=>'image','type'=>'image', 'value'=>'$data->getImagePath()','header'=>'素材圖片','htmlOptions'=>array('width'=>"80px",'style'=>'text-align: center')),
+	array('name'=>'url', 'header'=>'素材URL'),
+	array(            // display a column with "view", "update" and "delete" buttons
+            'htmlOptions'=>array('width'=>"40px",'style'=>'text-align: center'),
+            'class'=>'CButtonColumn',
+            'deleteConfirmation'=>'確定刪除此項目嗎?',
+            'buttons'=>array(
+                        'view'=>array(
+                                                    'label'=>'詳細資料',
+                                        ),
+                        'update'=>array(
+                                   'label'=>'更新',
+                       ),
+                        'delete'=>array(
+                                                    'label'=>'刪除',
+                                                    ),
+                        ),
+        ),
+	
 );
-
-$this->menu=array(
-	array('label'=>'List FGMaterial', 'url'=>array('index')),
-	array('label'=>'Create FGMaterial', 'url'=>array('create')),
-);
-
-Yii::app()->clientScript->registerScript('search', "
-$('.search-button').click(function(){
-	$('.search-form').toggle();
-	return false;
-});
-$('.search-form form').submit(function(){
-	$('#fgmaterial-grid').yiiGridView('update', {
-		data: $(this).serialize()
-	});
-	return false;
-});
-");
 ?>
-
-<h1>Manage Fgmaterials</h1>
-
-<p>
-    You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>
-        &lt;&gt;</b>
-or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
-</p>
-
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button btn')); ?>
-<div class="search-form" style="display:none">
-<?php $this->renderPartial('_search',array(
-	'model'=>$model,
+<?php $this->widget('zii.widgets.grid.CGridView',array(
+	'id'=>'fg-area-grid',
+	'dataProvider'=>$model->search(),
+	'filter'=>$model,
+	'columns'=>$gridColumns,
 )); ?>
-</div><!-- search-form -->
-

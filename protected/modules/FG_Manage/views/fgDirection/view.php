@@ -1,24 +1,10 @@
-<?php
-/* @var $this FgDirectionController */
-/* @var $model FgDirection */
-?>
+<?php echo TbHtml::breadcrumbs(array(
+	"方位設定"=>array("index"),
+	"修改($model->id)"=>array("update","id"=>$model->id),
+	"檢視"
+));?>
 
-<?php
-$this->breadcrumbs=array(
-	'Fg Directions'=>array('index'),
-	$model->name,
-);
 
-$this->menu=array(
-	array('label'=>'List FgDirection', 'url'=>array('index')),
-	array('label'=>'Create FgDirection', 'url'=>array('create')),
-	array('label'=>'Update FgDirection', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete FgDirection', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage FgDirection', 'url'=>array('admin')),
-);
-?>
-
-<h1>View FgDirection #<?php echo $model->id; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView',array(
     'htmlOptions' => array(

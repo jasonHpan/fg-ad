@@ -1,20 +1,6 @@
-<?php
-/* @var $this FgAreaController */
-/* @var $model FgArea */
-?>
-
-<?php
-$this->breadcrumbs=array(
-	'Fg Areas'=>array('index'),
-	'Create',
-);
-
-$this->menu=array(
-	array('label'=>'List FgArea', 'url'=>array('index')),
-	array('label'=>'Manage FgArea', 'url'=>array('admin')),
-);
-?>
-
-<h1>Create FgArea</h1>
+<?php echo TbHtml::breadcrumbs(array(
+	"地區設定"=>array("index"),
+	"新增"
+));?>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

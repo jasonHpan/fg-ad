@@ -38,7 +38,9 @@ class Controller extends CController
                                     case 'Board':
                                         $myfile->saveAs($photo_path.$model->image); 
                                         break;
-                                    
+                                    case 'FGMaterial':
+                                         $myfile->saveAs($photo_path.$model->image); 
+                                        break;
                                     default:
                                         $myfile->saveAs($photo_path.$model->photo); 
                                         break;

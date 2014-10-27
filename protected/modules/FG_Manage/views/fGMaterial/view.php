@@ -1,32 +1,9 @@
-<?php
-/* @var $this FGMaterialController */
-/* @var $model FGMaterial */
-?>
+<?php echo TbHtml::breadcrumbs(array(
+    "素材設定"=>array("index"),
+   '修改('.$model->id.')'=>array('update','id'=>$model->id),
+    "檢視"
+));?>
 
-<?php
-$this->breadcrumbs=array(
-	'Fgmaterials'=>array('index'),
-	$model->name,
-);
-
-
-?>
-<?php echo TbHtml::linkButton('更新', 
-                                                        array(
-                                                            'icon'=>'plus',
-                                                            'color' => TbHtml::BUTTON_COLOR_PRIMARY,
-                                                            'url'=>Yii::app()->createUrl('/FG_Manage/fGMaterial/update',array("id"=>$model->id))
-                                                        )); 
-      echo "&nbsp;&nbsp;";
-      echo TbHtml::linkButton('刪除', 
-                                                        array(
-                                                            'id'=>"deleteMaterial",
-                                                            'icon'=>'minus',
-                                                            'color' => TbHtml::BUTTON_COLOR_PRIMARY,
-                                                            //'url'=>Yii::app()->createUrl('/FG_Manage/fGMaterial/delete',array("id"=>$model->id))
-                                                        )); 
-?>&nbsp;
-<h1>View FGMaterial #<?php echo $model->id; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView',array(
     'htmlOptions' => array(
